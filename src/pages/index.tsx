@@ -6,7 +6,7 @@ export default function Home(props: HomeProps) {
 
   return (
     <div>
-      <h1>Contagem : {props.count}</h1>
+      <h1 className="font-bold ">Contagem : {props.count}</h1>
     </div>
   )
 }
@@ -14,8 +14,6 @@ export default function Home(props: HomeProps) {
 export const getServerSideProps = async () => {
   const response = await fetch("http://localhost:3333/pools/count")
   const data = await response.json()
-
-  console.log({data});
   
   return {
     props:{
